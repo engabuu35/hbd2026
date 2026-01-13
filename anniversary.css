@@ -1,0 +1,1038 @@
+/* ===== ANNIVERSARY SPECIFIC STYLES ===== */
+:root {
+    /* 1975 Album - Putih/Cream */
+    --color-1975: #ffffff;
+    --color-1975-box: #fcf7e1;
+    --color-1975-text: #2d2d2d;
+
+    /* gg bb xx - Putih dengan siluet */
+    --color-honne: #272c31;
+    --color-honne-text: #f8c96b;
+
+    /* james - Langit hitam kambing */
+    --color-james: #adadab;
+    --color-james-text: #2e2e2e;
+
+    /* Mama's Boy - Langit dengan neon koboy */
+    --color-mamaboy:
+    radial-gradient(
+        150% 70% at 40% 5%,
+        #2a3153 20%,
+        #313f86 50%,
+        transparent 120%
+    ),
+    radial-gradient(
+        200% 90% at 50% 65%,
+        #c95556 0%,
+        #ef9266 40%,
+        transparent 100%
+    ),
+    linear-gradient(
+        180deg,
+        #342925 50%
+    );
+
+    --color-mamaboy-text: #56d45d;
+
+    /* A Beautiful hindia - Biru-hitam */
+    --color-hindia: radial-gradient(
+        circle at 80% 10%,
+        #dfe0da 0%,
+        #306b9c 20%,
+        transparent 130%
+    ),
+    radial-gradient(
+        200% 90% at 70% 70%,
+        #b4be95 3%,
+        #22466a 80%,
+        transparent 100%
+    ),
+    linear-gradient(
+        180deg,
+        #0e1220 50%
+    );
+    --color-hindia-text: #ffffff;
+
+    /* Malibu Nights - Langit merah keunguan */
+    --color-malibu: linear-gradient(180deg, #e50480 0%, #e100b7 7%, #be0218 85%);
+    --color-malibu-text: #ffffff;
+
+    /* Gallery - Dark */
+    --color-gallery: #1a1a1a;
+    --color-gallery-text: #ffffff;
+}
+
+/* ===== SECTION 2: TIMELINE (honne) - MODERN & ROMANTIC ===== */
+.timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        rgba(248, 201, 107, 0.3) 0%,
+        rgba(248, 201, 107, 0.6) 50%,
+        rgba(248, 201, 107, 0.3) 100%);
+    box-shadow: 0 0 15px rgba(248, 201, 107, 0.3);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-top: 0rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item:hover {
+    transform: translateX(8px);
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even):hover {
+    transform: translateX(-8px);
+}
+
+.timeline-marker {
+    width: 28px;
+    height: 28px;
+    /* background: linear-gradient(135deg, #b8422f, #d4563a); */
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 20px rgba(248, 201, 107, 0.5),
+                inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.timeline-item:hover .timeline-marker {
+    background: rgb(237, 178, 51);
+    transform: translateX(-50%) scale(1.15);
+    opacity: 0.9;
+}
+
+
+.timeline-content {
+    width: 45%;
+    padding: 0;
+    background:  #f8c96b;
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(248, 201, 107, 0.2);
+    box-shadow: 0 8px 32px rgba(248, 201, 107, 0.12),
+                0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    min-height: 0px;
+    align-items: stretch;
+}
+
+.timeline-image {
+    width: 25%;
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+    overflow: hidden;
+    /* background: linear-gradient(135deg, #f8c96b, #ffd699); */
+    flex-shrink: 0;
+}
+
+.timeline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item:hover .timeline-image img {
+    transform: scale(1.05);
+}
+
+
+.timeline-item:hover .timeline-content::before {
+    opacity: 1;
+}
+
+.timeline-item:hover .timeline-content {
+    box-shadow: 0 12px 48px rgba(248, 201, 107, 0.2),
+                0 4px 16px rgba(248, 201, 107, 0.15);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 240, 0.92));
+    transform: translateY(-4px);
+    border-color: rgba(248, 201, 107, 0.4);
+}
+
+.timeline-text {
+    width: 70%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+.timeline-content p {
+    color: #5a6c7d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: "Barlow Condensed", sans-serif;
+    margin: 0;
+}
+
+/* ===== AGE BADGE (Anniversary Only) ===== */
+.age-badge {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4a574, #c77b8a);
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 10px 40px rgba(199, 123, 138, 0.4);
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.anniversary-badge {
+    background: linear-gradient(135deg, #5a5a5a, #2d2d2d);
+    box-shadow: 0 10px 40px rgba(64, 64, 64, 0.4);
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 10px 40px rgba(64, 64, 64, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 15px 50px rgba(64, 64, 64, 0.6);
+    }
+}
+
+/* ===== ANNIVERSARY PAGE SPECIFIC ===== */
+.anniversary-page .section-title {
+    color: inherit;
+}
+
+.heart-marker {
+    width: 28px !important;
+    height: 28px !important;
+    background: rgb(237, 178, 51);
+    border: 3px solid #c7c7c7 !important;
+    border-radius: 50% !important;
+    font-size: 0 !important;
+}
+
+.couple-photo svg {
+    color: #ff6b9d;
+}
+
+.anniversary-gallery .photo-item .photo-placeholder svg {
+    color: #ff6b9d;
+}
+
+.anniversary-footer {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+/* ===== RESPONSIVE TIMELINE ===== */
+@media (max-width: 968px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        flex-direction: row;
+    }
+
+    .timeline-marker {
+        left: 20px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .timeline-image {
+        width: 100%;
+        height: 20px;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .timeline-text {
+        width: 100%;
+        padding: 1.5rem;
+    }
+}
+
+/* ===== SECTION 1: INTRO (1975) ===== */
+#section-1975 {
+    background: var(--color-1975);
+    color: var(--color-1975-text);
+}
+
+/* ===== SECTION 2: TIMELINE (honne) - MODERN ELEGANT ===== */
+#section-honne {
+    background: var(--color-honne);
+    color: var(--color-honne-text);
+    position: relative;
+    overflow: hidden;
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+#section-honne::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(100, 200, 220, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+#section-honne::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* strong procedural noise (SVG) + existing radial glow */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.25' fill='%23000'/></svg>"), radial-gradient(circle, rgba(212, 165, 165, 0.08) 0%, transparent 70%);
+    background-repeat: repeat;
+    background-size: 180px 180px;
+
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+
+    pointer-events: none;
+    z-index: 3;
+}
+
+#section-honne .section-title {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 3rem;
+    margin-top: -2rem;
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+#section-honne .timeline {
+    position: relative;
+    z-index: 2;
+    margin-top: -1.8rem;
+}
+
+/* ===== SECTION 3 & 4 & 5: QUOTES ===== */
+#section-james {
+    background: var(--color-james);
+    color: var(--color-james-text);
+}
+
+/* ===== SECTION 6: BIRTHDAY MESSAGE (Malibu Nights) ===== */
+#section-malibu {
+    background: var(--color-malibu);
+    color: var(--color-malibu-text);
+}
+
+#section-hindia {
+    background: var(--color-hindia);
+    color: var(--color-hindia-text);
+}
+
+#section-1975 {
+    position: relative;
+    min-height: 100vh;
+
+    background-image: url("img/1975/bg-1975.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+#section-1975::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(18px);
+    transform: scale(1.1);
+
+    z-index: 0;
+}
+
+#section-1975::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.75),
+        rgba(162, 162, 162, 0.85)
+    );
+
+    z-index: 1;
+}
+
+#section-1975 .container {
+    position: relative;
+    z-index: 2;
+}
+
+:root {
+    --bfiafl-title: #f2f2f2;      /* judul utama */
+    --bfiafl-subtitle: #d6d6d6;   /* subjudul */
+    --bfiafl-text: #b5b5b5;       /* teks kecil */
+    --bfiafl-accent: #ffffff;    /* angka 7 */
+}
+
+#section-1975 .main-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    color: var(--bfiafl-title);
+}
+
+#section-1975 .name-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: var(--bfiafl-subtitle);
+}
+
+
+#section-1975 .intro-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+
+    letter-spacing: 0.05em;
+    margin-top: 1rem;
+
+    font-size: 0.95rem;
+    color: var(--bfiafl-text);
+}
+
+#section-1975 .age-badge {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.6);
+
+    color: var(--bfiafl-accent);
+    box-shadow: none;
+}
+
+/* ============================= */
+/* BFIAFL TEXT OVERRIDE - FINAL */
+/* ============================= */
+
+#section-1975 .main-title {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+
+    color: #f2f2f2 !important;
+}
+
+#section-1975 .name-title {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: #d6d6d6 !important;
+}
+
+#section-1975 .intro-text {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+
+    color: #b5b5b5 !important;
+}
+
+#section-1975 .age-number {
+    text-shadow: none !important;
+    opacity: 0.95;
+}
+
+.age-number {
+    color: #f2f2f2 !important;
+
+    text-shadow: 
+        0 4px 14px rgba(0,0,0,0.45) !important;
+
+    filter: none !important;
+    mix-blend-mode: normal !important;
+
+    -webkit-text-stroke: 0 !important;
+}
+
+/* MATIKAN SEMUA ANIMASI YANG BISA NULAR */
+.age-badge-container,
+.intro-box,
+.artwork {
+    filter: none !important;
+}
+
+.age-number {
+    text-shadow: none !important;
+    opacity: 0.92;
+    letter-spacing: 0.14em;
+}
+
+.timeline-marker {
+    width: 20px;
+    height: 20px;
+    background: #f6c96b;
+    border-radius: 50%;
+    border: none;
+
+    box-shadow: none;
+}
+
+.timeline-content {
+    background: #f6c96b;
+    /* border: 1px solid rgba(255,255,255,0.08); */
+    box-shadow: none;
+    backdrop-filter: blur(8px);
+}
+
+
+.timeline-content h3 {
+    color: #2e2e2e;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    color: #2e2e2e;
+}
+
+.timeline-item:hover {
+    transform: translateX(3px);
+}
+
+.timeline-item:nth-child(even):hover {
+    transform: translateX(-3px);
+}
+
+.timeline-item:hover .timeline-content {
+    background: rgb(237, 178, 51);
+    transform: translateY(-2px);
+    box-shadow: none;
+}
+
+
+.timeline-item:hover .timeline-image img {
+    transform: scale(1.01);
+    filter: contrast(1.05) brightness(1.02);
+}
+
+#section-honne {
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+#section-mamaboy {
+    background: var(--color-mamaboy);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== SECTION TITLE ===== */
+#section-mamaboy h2 {
+    font-family: "Google Sans Flex", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 3rem;
+    margin-top: -7rem;
+
+    color: #56d45d;
+    text-shadow:
+        0 0 6px rgba(82, 196, 87, 0.6),
+        0 0 12px rgba(82, 196, 87, 0.4),
+        0 0 24px rgba(82, 196, 87, 0.2);
+}
+
+/* ===== BIRTHDAY MESSAGE LAYOUT ===== */
+.birthday-message {
+    font-family: "Google Sans Flex", sans-serif;
+    padding-top: 1rem;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.6fr;
+    gap: 3rem;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== PHOTO AREA ===== */
+.message-photo {
+    position: relative;
+}
+
+#section-mamaboy .photo-placeholder {
+    max-width: 300px;
+    margin: 0 auto;
+    aspect-ratio: 3 / 4;
+}
+
+/* image wrapper */
+.photo-placeholder.has-image {
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    background: none;
+    position: relative;
+}
+
+.photo-placeholder.has-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 18px rgba(255, 150, 100, 0.35),
+        0 0 40px rgba(255, 120, 80, 0.25);
+
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.photo-placeholder.has-image:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1) contrast(1.05);
+}
+
+/* cinematic glow halo */
+.photo-placeholder.has-image::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 140, 90, 0.35),
+        transparent 70%
+    );
+    filter: blur(25px);
+    z-index: -1;
+}
+
+/* ===== MESSAGE TEXT ===== */
+.message-text {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 20px;
+
+    margin-left: -2.5rem;
+    margin-bottom: -5.5rem;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.message-text p {
+    margin-bottom: 1.5rem;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify;
+    color: #ffffff;
+}
+
+.message-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== SIGNATURE ===== */
+.signature {
+    margin-top: 2rem;
+    font-style: italic;
+    font-size: 1rem !important;
+    opacity: 0.9;
+}
+
+.signature strong {
+    font-style: normal;
+    font-size: 1.2rem;
+    color: #56d45d;
+}
+
+/* ===== DECORATIVE PHOTO CARD ===== */
+.photo-card.p3 {
+    position: absolute;
+    top: 20rem;
+    left: 1rem;
+    width: 10%;
+    height: auto;
+    z-index: 1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .birthday-message {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    #section-mamaboy .photo-placeholder {
+        max-width: 220px;
+    }
+
+    .message-text {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+}
+
+#section-mamaboy .photo-card.p3 {
+    transform: scale(0.6);
+    transform-origin: top left;
+}
+
+.message-text p {
+    color: #ddd4d4;
+}
+
+#section-mamaboy .section-title {
+    letter-spacing: 0.05rem;
+}
+
+#section-hindia .section-title {
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 0.075em;
+}
+
+#section-hindia .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+#section-hindia .photo-item {
+    border-radius: 6px;
+    background: rgba(255,255,255,0.025);
+}
+
+
+#section-hindia .photo-item:hover {
+    transform: scale(1.03);
+    background: rgba(255,255,255,0.06);
+}
+
+#section-hindia .photo-placeholder svg {
+    opacity: 0.35;
+    transition: opacity 0.3s ease;
+}
+
+#section-hindia .photo-item:hover svg {
+    opacity: 0.7;
+}
+
+#section-hindia::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("img/noise.png");
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+#section-hindia {
+    /* background: #000; */
+    color: #fff;
+    min-height: 100vh;
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#section-hindia::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    width: 140%;
+    height: 70%;
+    transform: translateX(-50%);
+    background: radial-gradient(
+        ellipse,
+        rgba(240, 248, 255, 0.35) 0%,
+        rgba(180, 210, 235, 0.18) 30%,
+        transparent 65%
+    );
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#section-hindia .photo-item {
+    background: rgba(255,255,255,0.025);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+#section-hindia .photo-item:hover img {
+    filter:
+        grayscale(0%)
+        contrast(1.05)
+        brightness(1.05)
+        saturate(1);
+}
+
+#section-hindia .section-title {
+    color: #eaf2f9;
+    text-shadow:
+        0 0 12px rgba(220, 235, 255, 0.35),
+        0 0 28px rgba(120, 160, 200, 0.25);
+}
+
+
+#section-hindia .photo-item img {
+    filter:
+        grayscale(15%)
+        contrast(0.95)
+        brightness(0.92)
+        saturate(0.9);
+}
+
+/* grid utama */
+#section-hindia .photo-grid {
+    display: grid;
+    /* 5 x 4 = 20 FOTO */
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* card */
+#section-hindia .photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+
+    background: rgba(255,255,255,0.03);
+    transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+/* image */
+#section-hindia .photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    filter: grayscale(20%) contrast(0.95) brightness(0.95);
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* hover khas Hindia */
+#section-hindia .photo-item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%) contrast(1.05) brightness(1.05);
+}
+
+/* hover subtle (nggak lebay) */
+#section-hindia .photo-item:hover {
+    transform: translateY(-2px);
+}
+
+#section-hindia::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("img/noise.png");
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    #section-hindia {
+        height: auto;
+    }
+
+    #section-hindia .photo-grid {
+        height: auto;
+        grid-template-columns: repeat(10, minmax(120px, 1fr));
+        grid-template-rows: repeat(2, 160px);
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+}
+
+#section-hindia .grig-bg {
+    position: relative;
+    max-width: 1200px;
+    margin: 3rem auto 0; /* GAP ATAS & BAWAH */
+    padding: 28px;
+
+    border-radius: 16px;
+    background: rgba(0, 37, 80, 0.799);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+
+    z-index: 2;
+}
+
+#section-hindia .photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+
+    background: rgba(255,255,255,0.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+
+    transition: transform 0.4s ease;
+}
+
+#section-hindia .photo-item:hover {
+    transform: translateY(-2px);
+}
+
+#section-hindia .photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    filter: grayscale(18%) brightness(0.94) contrast(0.96);
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+#section-hindia .photo-item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%) brightness(1.05) contrast(1.05);
+}
+
+#section-mamaboy .message-text .signature strong{
+    color: var(--color-mamaboy-text)
+}
+
+.modal-photo {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    border-radius: 14px;
+    margin-bottom: 1.2rem;
+}
+
+.modal-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #444;
+}
+
+/* Wrapper kartu foto */
+.photo-card.p6{
+    width: 280px;          /* Ubah ini untuk atur besar kartu */
+    height: 350px;         /* Ubah ini untuk atur tinggi kartu */
+    overflow: hidden;
+    position: relative;
+    top: 12rem;
+    left: 4rem;
+}
+
+.photo-card.p6 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+    object-position: center;
+    display: block;
+}
+
+.photo-card.p6b{
+    width: 420px;          /* Ubah ini untuk atur besar kartu */
+    height: 370px;         /* Ubah ini untuk atur tinggi kartu */
+    overflow: hidden;
+    border-radius: 16px;
+    position: relative;
+    top: 11.4rem;
+    margin-right: -3.5rem;
+}
+
+.photo-card.p6b img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* Isi penuh tanpa distorsi */
+    object-position: center; /* Bisa diubah: top, center, bottom */
+    display: block;
+}
+
+.quote-content blockquote {
+    align-items: center;
+    margin-left: 3rem;
+}

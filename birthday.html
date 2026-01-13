@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 20th Birthday Aufardana</title>
+    <meta name="description" content="A special 20th birthday celebration for Aufardana with LANY vibes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@600;700;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Rasa:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" 
+        rel="stylesheet">
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="birthday.css">
+</head>
+
+<body>
+
+
+    <!-- Audio Players (Hidden) -->
+    <div class="audio-players">
+        <audio id="player-lany" preload="auto" loop>
+            <source src="music/ilysb.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="player-ggbbxx" preload="auto" loop>
+            <source src="music/the-older-you-get.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="player-soft" preload="auto" loop>
+            <source src="music/sound-of-rain.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="player-mamaboy" preload="auto" loop>
+            <source src="music/nobody-else.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="player-blur" preload="auto" loop>
+            <source src="music/Alonica.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="player-malibu" preload="auto" loop>
+            <source src="music/let-me-know.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Spotify-Style Music Player Card -->
+    <div class="spotify-player" id="spotifyPlayer">
+        <div class="spotify-album-art" id="albumArt">
+            <img src="" alt="Album Cover" id="albumImage">
+            <div class="album-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14.5c-2.49 0-4.5-2.01-4.5-4.5S9.51 7.5 12 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5zm0-5.5c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                </svg>
+            </div>
+        </div>
+        <div class="spotify-info">
+            <div class="spotify-track">
+                <span class="track-name" id="trackName">ILYSB</span>
+                <span class="track-artist" id="trackArtist">LANY</span>
+            </div>
+            <div class="spotify-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-time">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">0:00</span>
+                </div>
+            </div>
+        </div>
+        <div class="spotify-controls">
+            <button class="control-btn" id="prevBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
+                </svg>
+            </button>
+            <button class="control-btn play-btn" id="playBtn">
+                <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                </svg>
+            </button>
+            <button class="control-btn" id="nextBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Section 1: LANY Album (Putih/Cream) - Intro -->
+    <section id="section-lany" class="album-section" data-album="lany">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-frame">
+                    <div class="intro-box">
+                        <div class="intro-grid">
+                            <!-- Left: Artwork -->
+                            <div class="artwork">
+                                <div class="age-badge-container">
+                                    <!-- <span class="age-number">20</span> -->
+                                    <img src="img/rose.png" alt="Rose" class="intro-rose" loading="lazy">
+                                </div>
+                            </div>
+                            <!-- Right: Text -->
+                            <div class="intro-text-block">
+                                <h1 class="main-title">Happy Birthday <br>20th</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: gg bb xx - Cake & Song Card -->
+    <section id="section-ggbbxx" class="album-section" data-album="ggbbxx">
+        <div class="photo-card p1">
+            <img src="img/ggbbxx/gg1.png" alt="Memory 1" loading="lazy">
+        </div>
+        <div class="container ggbbxx-content">
+            <div class="cake-container">
+                <div class="cake">
+                    <div class="cake-glow"></div>
+                    <div class="plate"></div>
+                    <div class="layer layer-bottom"></div>
+                    <div class="layer layer-middle"></div>
+                    <div class="layer layer-top"></div>
+                    <div class="icing"></div>
+                    <div class="drip drip1"></div>
+                    <div class="drip drip2"></div>
+                    <div class="drip drip3"></div>
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+                </div>
+                <div class="cake-message">
+                    <p>Selamat tinggal 19! Buat harapan & tiup lilinnya!</p>
+                    <button id="blowCandleBtn" class="action-btn">Tiup Lilin 🎂</button>
+                    <audio id="fireworkSound" src="music/sfx/kembangapi.mp3" preload="auto"></audio>
+                </div>
+            </div>
+        </div>
+        <div class="photo-card p2">
+            <img src="img/ggbbxx/gg2.png" alt="Memory 2" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Section 3: A Beautiful Blur - Quote -->
+    <section id="section-blur" class="album-section" data-album="blur">
+        <div class="blur-circle"></div>
+        <div class="container">
+            <div class="blur-message">
+                <p>
+                    "Selama ini kamu dah ngadepin banyak hal dalam hidup sayangg. Semoga di usiamu yang ke-20 ini, setiap detiknya menjadi kenangan yang tak terlupakan, setiap kesempatan menjadi momen indah untuk dikenang.
+                    Semoga harapan-harapanmu yang udah kamu sebutin tadi segera terkabul yaa. Di kepala dua ini semoga yang datang hanya bahagia, dan bahagia, bahagia selalu.
+                    Terima kasih kepada dirimu yang selalu jadi versi terbaikmu."
+                </p>
+                <p>
+                    Life is a beautiful blur, but you are the focus.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Malibu Nights - Visual Strip -->
+    <section id="section-malibu" class="album-section timeline-section" data-album="malibu">
+        <div class="visual-strip-section" id="visualStrip">
+            <div class="malibu-moon">
+                <img src="img/bulan_malibu.png" alt="Moon" class="moon-img">
+            </div>
+            <div class="visual-strip-container">
+                <!-- Row 1: Right Scroll -->
+                <div class="marquee-row">
+                    <div class="marquee-track animate-scrollRight">
+                        <!-- Set 1 -->
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar1.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar3.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar7.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar8.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <!-- Set 1 Duplicate -->
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar1.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar3.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar7.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar8.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Left Scroll -->
+                <div class="marquee-row">
+                    <div class="marquee-track animate-scrollLeft">
+                        <!-- Set 2 -->
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar9.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar10.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar11.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar12.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <!-- Set 2 Duplicate -->
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar9.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar10.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar11.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                        <div class="marquee-image-card">
+                            <div class="marquee-image-content"
+                                style="background-image: url('img/malibu/opar12.jpg');">
+                            </div>
+                            <div class="marquee-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="malibu-text">
+                <p>AUFAR YANG TUMBUH DEWASA</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Mama's Boy - Quote -->
+    <section id="section-mamaboy" class="album-section" data-album="mamaboy">
+        <div class="photo-card p3">
+            <img src="img/mamaboy/kuda.png" alt="Memory 1" loading="lazy">
+        </div>
+        <div class="container">
+            <h2 class="section-title">SUGENG AMBAL WARSA 20 TAHUNN!</h2>
+            <div class="birthday-message">
+                <div class="message-photo">
+                    <div class="photo-placeholder couple-photo has-image">
+                        <img src="img/foto/mmboy.jpg" alt="Mama's Boy Photo">
+                    </div>
+                </div>
+                <div class="message-text">
+                    <p>Selamat ulang tahun yang ke 20 tahun sayang. Btw berapa tahun nih udah bersama wkwkwk. Kerasa gak tuh udah nyentuh umur 20 tahun. 
+                        Hari ini gak cuman ngerayain bertambahnya usia yaa, tapi juga tentang ngrayain perjalanan hidup kamu yang luar biasa sejauh ini, dan juga pengingat klo kita tumbuh bersama.
+                        Tentunya banyak yahh pelajaran yang bisa diambil dari kehidupan inii. Semoga di umur 20 tahun ini kamu selalu diberi kesehatan, makin dewasa, makin bijak ngambil keputusan, makin sabar, makin rajin, makin pinter, makin baik, makin sukses, makin banyak duit, makin bahagia, makin punya banyak kucing, makin makin makin (yang baik-baik aja wkwkw), dan makin sayang aku juga pastinya hehe.
+                        Semoga harapan yang udah pernah kamu bilang ke aku kemaren terkabul sesuai rencana ya sayang.
+                        Aku selalu doain yang terbaik buat kamu di segala hal yang kamu lakuin. Terima kasih sudah menjadi versi terbaik Aufardana.🤍
+                    </p>
+                    <p class="signature">Forever yours,<br><strong>Buma</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Soft - Quote -->
+    <section id="section-soft" class="album-section" data-album="soft">
+        <div class="photo-card p4">
+            <img src="img/soft/opar1.png" alt="Memory 1" loading="lazy">
+        </div>
+        <div class="photo-card p4b">
+            <img src="img/soft/opar2.png" alt="Memory 1" loading="lazy">
+        </div>
+        <div class="photo-card p4c">
+            <img src="img/soft/opar3.png" alt="Memory 1" loading="lazy">
+        </div>
+        <div class="photo-card p4d">
+            <img src="img/soft/opar4.png" alt="Memory 1" loading="lazy">
+        </div>
+        <div class="container">
+            <div class="quote-content">
+                <blockquote>
+                    I Love You Always.
+                </blockquote>
+            </div>
+        </div>
+        <div class="photo-card p5">
+            <img src="img/soft/kucing1.png" alt="Memory 1" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Dibuat oleh Buma for Aufardana's 20th Birthday</p>
+        <a href="index.html" class="footer-back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            <span>Back to Home</span>
+        </a>
+    </footer>
+
+    <!-- Modal for Timeline Details -->
+    <div class="modal" id="timelineModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody">
+            </div>
+        </div>
+    </div>
+
+    <script src="birthday.js"></script>
+</body>
+
+</html>

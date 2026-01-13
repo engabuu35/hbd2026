@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You, Aufardana ❤️</title>
+    <meta name="description" content="A special celebration for Aufardana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Floating Hearts Animation -->
+    <div class="floating-hearts" id="hearts"></div>
+
+    <!-- Landing Content -->
+    <main class="landing-container">
+        <div class="landing-page">
+            <div class="landing-content">
+            <h1 class="landing-title">For You</h1>
+            <h2 class="landing-name">Aufardana</h2>
+            <p class="landing-subtitle">Choose your special moment</p>
+
+            <div class="choice-buttons">
+                <a href="anniversary.html" class="choice-btn anniversary-btn">
+                    <div class="btn-icon">💕</div>
+                    <div class="btn-content">
+                        <span class="btn-number">7th</span>
+                        <span class="btn-label">Anniversary</span>
+                    </div>
+                    <div class="btn-glow"></div>
+                </a>
+
+                <a href="birthday.html" class="choice-btn birthday-btn">
+                    <div class="btn-icon">🎂</div>
+                    <div class="btn-content">
+                        <span class="btn-number">20th</span>
+                        <span class="btn-label">Birthday</span>
+                    </div>
+                    <div class="btn-glow"></div>
+                </a>
+            </div>
+
+            <p class="landing-note">With love, always ❤️</p>
+        </div>
+        </div>
+    </main>
+
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            document.getElementById('hearts').appendChild(heart);
+
+            setTimeout(() => heart.remove(), 7000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+</body>
+
+</html>
