@@ -1050,6 +1050,10 @@
     transition: none !important;
 }
 
+.timeline{
+    margin-top: -2.5rem !important;
+}
+
 /* .timeline-item:hover,
 .timeline-item:nth-child(even):hover {
     transform: none !important;
