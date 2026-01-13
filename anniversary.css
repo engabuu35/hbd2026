@@ -1034,5 +1034,40 @@
 
 .quote-content blockquote {
     align-items: center;
-    margin-left: 3rem;
+    margin-left: 4rem;
 }
+
+/* ================================ */
+/* MATIKAN SEMUA ANIMASI TIMELINE */
+/* ================================ */
+
+/* hilangkan semua transition & animasi */
+.timeline,
+.timeline *,
+.timeline *::before,
+.timeline *::after {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* .timeline-item:hover,
+.timeline-item:nth-child(even):hover {
+    transform: none !important;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: none !important;
+    box-shadow: none !important;
+    background: #f6c96b !important;
+}
+
+.timeline-item:hover .timeline-image img {
+    transform: none !important;
+    filter: none !important;
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: translateX(-50%) !important;
+    background: #f6c96b !important;
+    opacity: 1 !important;
+} */
